@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - SplitImg for Designers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        main {
+            padding: 20px;
+        }
+        h1 {
+            color: #FFF;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .footer {
+            text-align: center;
+            font-size: 14px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+        ul {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SplitImg for Designers</h1>
+        <p>Documentation</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Overview</h2>
+            <p>
+                SplitImg for Designers is a utility application developed for Saks Global. This tool automates the process of organizing, tagging, and distributing images among designers. It assigns color tags based on the background color of the images and ensures a smooth workflow by splitting images into designated folders for each designer.
+            </p>
+        </section>
+
+        <section>
+            <h2>Key Features</h2>
+            <ul>
+                <li>Supports multiple image formats: PNG, JPEG, BMP, GIF, TIFF</li>
+                <li>Automatically assigns green or yellow tags based on the image's background color</li>
+                <li>Distributes images among selected designers using a round-robin method</li>
+                <li>Displays the number of images processed and the time taken for the task</li>
+                <li>Simple UI for quick and efficient image sorting</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>How It Works</h2>
+            <p>
+                SplitImg works by processing images in a selected folder and distributing them across multiple designer folders. The software performs the following steps:
+            </p>
+            <ul>
+                <li><strong>Image Identification:</strong> The software scans the source folder for images in supported formats (PNG, JPEG, BMP, GIF, TIFF).</li>
+                <li><strong>Background Color Check:</strong> Each image's top-right corner is analyzed to determine if the background is white or gray. If the background is white, the image is tagged with a yellow label; if gray, it is tagged with a green label.</li>
+                <li><strong>Round-Robin Distribution:</strong> The images are distributed among the specified number of designers using a round-robin method, ensuring an even split of images.</li>
+                <li><strong>Tagging:</strong> Tags (green or yellow) are applied to the images using macOS AppleScript commands. This allows easy identification of images based on background color.</li>
+                <li><strong>Logging and Feedback:</strong> The software keeps track of the number of images processed and the time taken for the operation, providing real-time feedback in the user interface.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Background Calculations</h2>
+            <p>
+                The software checks the background of each image by analyzing a small region of the image. Specifically, it looks at the top-right corner of the image (the last few pixels in that region). The following logic is applied:
+            </p>
+            <ul>
+                <li>If the pixels in the top-right corner match the color (255, 255, 255), which represents white, the image is considered to have a white background.</li>
+                <li>If the pixel color is close to RGB (128, 128, 128), the image is considered to have a gray background.</li>
+                <li>Images that don't fit into these categories are skipped, and the software doesn't apply any tags to them.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>How to Use</h2>
+            <p>Follow these simple steps to use the SplitImg software:</p>
+            <ul>
+                <li><strong>Step 1:</strong> Open the application and select the number of designers from the dropdown (up to 15). This will determine how the images are distributed.</li>
+                <li><strong>Step 2:</strong> Click the "Run" button to begin the process.</li>
+                <li><strong>Step 3:</strong> A file dialog will appear. Select the folder containing the images you want to process.</li>
+                <li><strong>Step 4:</strong> The software will begin processing the images. As it works, it will display the number of images processed and the time taken for the task.</li>
+                <li><strong>Step 5:</strong> Once the process is complete, you will be notified, and the images will be placed in separate folders for each designer, with appropriate tags applied.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Developer Information</h2>
+            <p>This tool was developed by Karan Khandekar, specifically for Saks Global. It aims to streamline the workflow for designers working on image-based tasks by automating the organization and tagging process.</p>
+        </section>
+    </main>
+
+    <div class="footer">
+        <p>Developed by Karan Khandekar for Saks Global</p>
+    </div>
+</body>
+</html>
