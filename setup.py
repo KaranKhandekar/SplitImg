@@ -4,8 +4,7 @@ APP = ['SplitImg.py']
 DATA_FILES = []
 OPTIONS = {
     'argv_emulation': True,
-    'packages': ['numpy', 'Pillow'],  # List the libraries here
-    'iconfile': 'app_icon.icns',
+    'packages': ['tkinter'],
 }
 
 setup(

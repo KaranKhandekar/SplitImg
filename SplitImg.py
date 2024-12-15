@@ -2,8 +2,9 @@ import os
 import shutil
 import time
 import webbrowser
-from tkinter import Tk, Button, Label, filedialog, messagebox, StringVar, OptionMenu
+from tkinter import Tk, Button, Label, filedialog, messagebox, StringVar, OptionMenu, BOTTOM
 from PIL import Image
+from tkinter import ttk
 
 def tag_file(filepath, color_tag):
     """
@@ -68,19 +69,20 @@ def run_app():
     root.geometry("500x600")
     root.configure(bg='black')  # Set background to black
 
+    # Label for the designer count selection
+    designer_count_label = Label(root, text="Select Number of Designer", font=('Helvetica', 14), fg='white', bg='black')
+    designer_count_label.pack(pady=10)
+
     # Designer count dropdown
     designer_count_var = StringVar(root)
     designer_count_var.set("1")  # Default value
 
-    designer_count_label = Label(root, text="Select the number of Designers", font=('Helvetica', 14), fg='white', bg='black')
-    designer_count_label.pack(pady=10)
-
-    designer_count_dropdown = OptionMenu(root, designer_count_var, *[str(i) for i in range(1, 16)])  # Limit to 15 designers
-    designer_count_dropdown.config(bg='black', fg='white')  # Set dropdown to white text and black background
+    # Create an OptionMenu for designer count
+    designer_count_dropdown = OptionMenu(root, designer_count_var, *[str(i) for i in range(1, 41)])  # Limit to 40 designers
     designer_count_dropdown.pack(pady=10)
 
     def on_run():
-        num_designers = int(designer_count_var.get())
+        num_designers = int(designer_count_var.get())  # Get selected designer count
         source_folder = filedialog.askdirectory(title="Select Source Folder")
         if source_folder:
             split_images(source_folder, num_designers, status_label, count_label, time_label)
@@ -111,6 +113,10 @@ def run_app():
 
     user_guide_button = Button(root, text="User Guide", command=lambda: open_link("https://karankhandekar.github.io/SplitImg/how_to_use.html"), font=('Helvetica', 12), bg='gray', fg='white')
     user_guide_button.pack(pady=5)
+
+    # Software version label
+    version_label = Label(root, text="Version 2.0.1", font=('Helvetica', 10), fg='gray', bg='black')
+    version_label.pack(side=BOTTOM, pady=10)
 
     root.mainloop()
 
