@@ -1,0 +1,53 @@
+SplitImg - Installation and Usage Guide
+
+Installation:
+1. Download and unzip SplitImg.zip
+2. Drag SplitImg.app to your Applications folder
+3. First time running:
+   - Right-click on SplitImg.app
+   - Select "Open"
+   - Click "Open" in the security dialog
+   - Grant necessary permissions when prompted
+
+How to Use:
+1. Launch SplitImg
+2. Select number of designers (1-40) from the dropdown
+3. Click "Start"
+4. Choose the folder containing your product images
+5. Wait for processing to complete
+
+The app will:
+- Create separate folders for each designer
+- Distribute images based on SVS numbers (first 13 digits of filename)
+- Tag white backgrounds with Yellow in Finder
+- Tag non-white backgrounds with Green in Finder
+- Generate an Excel report with distribution details
+
+Output:
+- Designer folders (Designer_1, Designer_2, etc.)
+- Excel report showing distribution of images
+- Finder tags applied to images
+
+Note: 
+- All images with the same SVS number (first 13 digits) will go to the same designer
+- The Excel report shows how many images each designer received
+- You can find the Excel report in the same folder as your images
+
+System Requirements:
+- macOS 14.7.1 or later
+- Minimum 4GB RAM recommended
+- Sufficient disk space for image processing
+
+For support or issues, contact: [Your contact information]
+Method 1 - Using Finder:
+1. Right-click (or Control-click) on SplitImg.app in Finder
+2. Select "Open" from the context menu
+3. Click "Open" in the security dialog that appears
+
+Method 2 - Using System Settings:
+1. Go to Apple menu () > System Settings
+2. Click on "Privacy & Security"
+3. Scroll down to "Security"
+4. Look for the message about SplitImg being blocked
+5. Click "Open Anyway"
+6. Click "Open" in the final confirmation dialog
