@@ -64,7 +64,7 @@ def split_images(source_folder, num_designers, status_label, count_label, time_l
 
 def run_app():
     root = Tk()
-    root.title("SplitImg for Designers")
+    root.title("SplitImg for Saks Global")
     root.geometry("500x600")
     root.configure(bg='black')  # Set background to black
 
@@ -106,10 +106,10 @@ def run_app():
     static_text.pack(side='bottom', pady=10)
 
     # Documentation and User Guide buttons
-    doc_button = Button(root, text="Documentation", command=lambda: open_link("https://yourdocumentationlink.com"), font=('Helvetica', 12), bg='gray', fg='white')
+    doc_button = Button(root, text="Documentation", command=lambda: open_link("https://karankhandekar.github.io/SplitImg/documentation.html"), font=('Helvetica', 12), bg='gray', fg='white')
     doc_button.pack(pady=5)
 
-    user_guide_button = Button(root, text="User Guide", command=lambda: open_link("https://youruserguidelink.com"), font=('Helvetica', 12), bg='gray', fg='white')
+    user_guide_button = Button(root, text="User Guide", command=lambda: open_link("https://karankhandekar.github.io/SplitImg/how_to_use.html"), font=('Helvetica', 12), bg='gray', fg='white')
     user_guide_button.pack(pady=5)
 
     root.mainloop()
